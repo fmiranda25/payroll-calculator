@@ -3,21 +3,20 @@ package com.pluralsight;
 import java.util.Scanner;
 
 public class PayrollApp {
+    static Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
 
-        Scanner inputName = new Scanner(System.in);
         System.out.println("Enter your name:");
-        String name = inputName.nextLine();
+        String name = input.nextLine();
 
-        Scanner inputHoursWorked = new Scanner(System.in);
         System.out.println("Enter your hours worked:");
-        float hoursWorked = inputHoursWorked.nextFloat();
+        float hoursWorked = input.nextFloat();
 
-        Scanner inputPayRate = new Scanner(System.in);
         System.out.println("Enter your hourly pay:");
-        float payRate = inputPayRate.nextFloat();
+        float payRate = input.nextFloat();
 
-        float grossPay = 0f;
+        float grossPay;
         if (hoursWorked > 40) {
             grossPay = (((hoursWorked - 40) * payRate) * 1.5f) + (payRate * 40);
         } else {
